@@ -6,8 +6,6 @@ import { motion } from 'framer-motion';
 // import { GlowButton } from '@21st-dev/ui/buttons/glow';
 
 import doctorPortrait from './assets/doctor-profile.jpeg';
-import doctorCasual from './assets/doctor-casual.jpeg';
-import hospitalLogo from './assets/hospital-logo.svg';
 
 const doctor = {
   fullName: 'Dr. Jeevan Shankar Rathod',
@@ -45,8 +43,8 @@ const education = [
 ];
 
 const testimonials = [
-  'No testimonial found in resume – using neutral placeholder. “Doctor explained treatment clearly and gave enough time during consultation.”',
-  'No testimonial found in resume – using neutral placeholder. “Clinic process was smooth and staff was supportive throughout.”'
+  'Doctor explained treatment clearly and gave enough time during consultation.',
+  'Clinic process was smooth and staff was supportive throughout.'
 ];
 
 const mapEmbed = 'https://maps.google.com/maps?q=Jagdamba%20Hospital%20Near%20Krishna%20Medical%20Tiwasa%20Yavatmal&t=&z=15&ie=UTF8&iwloc=&output=embed';
@@ -74,10 +72,7 @@ export default function App() {
     <div>
       <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <a href="#" className="flex items-center gap-3">
-            <img src={hospitalLogo} alt="Jagdamba Hospital logo" className="h-10 w-auto" />
-            <p className="hidden font-semibold text-medical-700 sm:block">{doctor.clinicName}</p>
-          </a>
+          <a href="#" className="font-semibold text-medical-700">{doctor.clinicName}</a>
           <ul className="hidden gap-5 text-sm font-medium text-slate-600 md:flex">
             {sections.map(([id, label]) => (
               <li key={id}>
@@ -95,7 +90,6 @@ export default function App() {
 
       <header className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-12 md:grid-cols-2 md:items-center">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
-          <img src={hospitalLogo} alt="Jagdamba Hospital" className="mb-5 h-14 w-auto rounded-lg border border-slate-200 bg-white p-2 shadow-sm" />
           <p className="mb-3 inline-block rounded-full bg-medical-100 px-3 py-1 text-xs font-semibold text-medical-700">Trusted Homeopathic & Critical Care Support</p>
           <h1 className="text-3xl font-bold leading-tight md:text-5xl">{doctor.fullName}</h1>
           <p className="mt-3 text-lg text-slate-600">{doctor.specialty}</p>
@@ -105,9 +99,8 @@ export default function App() {
             <a href="#contact" className="rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:border-medical-600 hover:text-medical-700">Visit Clinic</a>
           </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="grid gap-4">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <img src={doctorPortrait} alt="Dr. Jeevan Shankar Rathod" className="h-[560px] w-full rounded-3xl object-cover object-center shadow-soft" />
-          <img src={doctorCasual} alt="Dr. Rathod in clinic attire" className="h-[320px] w-full rounded-3xl object-cover object-top shadow-soft" />
         </motion.div>
       </header>
 
