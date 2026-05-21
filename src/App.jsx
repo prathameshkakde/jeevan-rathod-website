@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 // import { AnimatedCard } from '@21st-dev/ui/cards/animated';
 // import { GlowButton } from '@21st-dev/ui/buttons/glow';
 
-import doctorPortrait from './assets/doctor-profile.svg';
-import doctorCasual from './assets/doctor-casual.svg';
+import doctorPortrait from './assets/doctor-profile.jpeg';
+import doctorCasual from './assets/doctor-casual.jpeg';
 import hospitalLogo from './assets/hospital-logo.svg';
 
 const doctor = {
