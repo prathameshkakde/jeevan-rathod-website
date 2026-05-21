@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 
 import doctorPortrait from './assets/doctor-profile.svg';
 import doctorCasual from './assets/doctor-casual.svg';
+import hospitalLogo from './assets/hospital-logo.svg';
 
 const doctor = {
   fullName: 'Dr. Jeevan Shankar Rathod',
@@ -73,7 +74,10 @@ export default function App() {
     <div>
       <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <p className="font-semibold text-medical-700">{doctor.clinicName}</p>
+          <a href="#" className="flex items-center gap-3">
+            <img src={hospitalLogo} alt="Jagdamba Hospital logo" className="h-10 w-auto" />
+            <p className="hidden font-semibold text-medical-700 sm:block">{doctor.clinicName}</p>
+          </a>
           <ul className="hidden gap-5 text-sm font-medium text-slate-600 md:flex">
             {sections.map(([id, label]) => (
               <li key={id}>
@@ -91,6 +95,7 @@ export default function App() {
 
       <header className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-12 md:grid-cols-2 md:items-center">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}>
+          <img src={hospitalLogo} alt="Jagdamba Hospital" className="mb-5 h-14 w-auto rounded-lg border border-slate-200 bg-white p-2 shadow-sm" />
           <p className="mb-3 inline-block rounded-full bg-medical-100 px-3 py-1 text-xs font-semibold text-medical-700">Trusted Homeopathic & Critical Care Support</p>
           <h1 className="text-3xl font-bold leading-tight md:text-5xl">{doctor.fullName}</h1>
           <p className="mt-3 text-lg text-slate-600">{doctor.specialty}</p>
@@ -101,8 +106,8 @@ export default function App() {
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="grid gap-4">
-          <img src={doctorPortrait} alt="Dr. Jeevan Shankar Rathod" className="h-[460px] w-full rounded-3xl object-cover shadow-soft" />
-          <img src={doctorCasual} alt="Dr. Rathod in clinic attire" className="h-44 w-full rounded-3xl object-cover shadow-soft" />
+          <img src={doctorPortrait} alt="Dr. Jeevan Shankar Rathod" className="h-[560px] w-full rounded-3xl object-cover object-center shadow-soft" />
+          <img src={doctorCasual} alt="Dr. Rathod in clinic attire" className="h-[320px] w-full rounded-3xl object-cover object-top shadow-soft" />
         </motion.div>
       </header>
 
