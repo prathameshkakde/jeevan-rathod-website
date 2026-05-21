@@ -147,7 +147,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-sm text-slate-600">
-        © {new Date().getFullYear()} {doctor.clinicName}. Website created by <span className="font-semibold text-medical-700">Wiserverse Credits</span>.
+        © {new Date().getFullYear()} {doctor.clinicName}. Website created by <span className="font-semibold text-medical-700">Wiserverse</span>.
       </footer>
     </div>
   );
